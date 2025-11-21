@@ -4,7 +4,7 @@ ENV HOME /usr/src/app
 WORKDIR $HOME
 
 COPY package*.json ./
-RUN npm i --force --silent
+RUN npm i --legacy-peer-deps --silent
 
 COPY . .
 
