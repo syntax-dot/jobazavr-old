@@ -5,11 +5,17 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 COPY .npmrc ./
-RUN npm ci --legacy-peer-deps --silent
-RUN npm rebuild @swc/core
 
+# Устанавливаем зависимости
+RUN npm ci --legacy-peer-deps --silent
+
+# Копируем исходники
 COPY . .
 
+RUN rm -rf node_modules/@swc
+RUN npm install --force @swc/core
+
+# Собираем проект
 RUN npm run build
 
 # Stage 2: production
