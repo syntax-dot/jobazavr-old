@@ -5,7 +5,7 @@ WORKDIR $HOME
 
 COPY package*.json ./
 COPY .npmrc ./
-COPY package-lock.json ./
+RUN ls -la
 RUN npm ci --legacy-peer-deps --silent
 
 COPY . .
