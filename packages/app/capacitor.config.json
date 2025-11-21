@@ -1,0 +1,43 @@
+{
+  "appId": "com.jobazavr.app",
+  "appName": "Jobazavr",
+  "webDir": "dist",
+  "hideLogs": false,
+  "SplashScreen": {
+    "androidScaleType": "CENTER_CROP"
+  },
+  "build": {
+    "minify": "terser"
+  },
+  "ios": {
+    "includePlugins": [
+      "@capacitor/app",
+      "@capacitor/geolocation",
+      "@capacitor/assets",
+      "@capacitor/preferences",
+      "capacitor-pass-to-wallet",
+      "@capacitor-community/media",
+      "capacitor-appmetrica-plugin",
+      "@capacitor/device",
+      "@capacitor/push-notifications",
+      "@capacitor/keyboard"
+    ]
+  },
+  "android": {
+    "includePlugins": [
+      "@capacitor/app",
+      "@capacitor/geolocation",
+      "@capacitor/assets",
+      "@capacitor/status-bar",
+      "@capacitor/preferences",
+      "@capacitor-community/media",
+      "capacitor-appmetrica-plugin",
+      "@capacitor/device",
+      "@capacitor/push-notifications",
+      "@capacitor/keyboard"
+    ]
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

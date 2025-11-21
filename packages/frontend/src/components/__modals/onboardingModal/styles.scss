@@ -1,0 +1,29 @@
+.steps-image-container {
+  width: 100%;
+  border-top-left-radius: var(--vkui--size_border_radius_paper--regular, 12px);
+  border-top-right-radius: var(--vkui--size_border_radius_paper--regular, 12px);
+  overflow: hidden;
+  height: 250px;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.dots {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 7px;
+    background-color: #ececec;
+  }
+
+  .dot.active {
+    background-color: #d9d9d9;
+  }
+}

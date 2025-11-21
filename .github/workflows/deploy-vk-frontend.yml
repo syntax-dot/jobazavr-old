@@ -1,0 +1,55 @@
+name: Deploy VK-Frontend
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: |
+          docker build -t vk-frontend:latest -f ./packages/frontend/Dockerfile .
+
+      - name: Save Docker image as tar
+        run: docker save vk-frontend:latest -o vk-frontend.tar
+
+      - name: Copy image to remote server
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          source: "vk-frontend.tar"
+          target: "~/deploy/vk-frontend"
+
+      - name: Deploy on remote server
+        uses: appleboy/ssh-action@v0.1.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            cd ~/deploy/vk-frontend
+            docker load -i vk-frontend.tar
+            
+            # Останавливаем старый контейнер если есть
+            docker stop vk-frontend || true
+            docker rm vk-frontend || true
+            
+            # Запускаем новый контейнер
+            docker run -d \
+              --name vk-frontend \
+              -p 3000:3000 \
+              --restart unless-stopped \
+              vk-frontend:latest
+            
+            # Очистка
+            docker image prune -f

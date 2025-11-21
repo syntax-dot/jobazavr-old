@@ -1,0 +1,128 @@
+.maxWidth .vkuiPlaceholder__in {
+  width: 100%;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.pincode__number,
+.pincode__numbers {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.pincode {
+  margin-top: 0;
+  text-align: center;
+}
+
+.pincode__number {
+  flex-shrink: 0;
+  align-items: center;
+  width: 10%;
+  max-width: 32px;
+  height: 46px;
+  margin: 5px 6px 5px;
+  padding: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+  text-align: center;
+  color: var(--text_primary,var(--vkui--color_text_primary));
+  outline: none;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.pincode__hidden-control-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: transparent;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+input.pincode__hidden-control-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 767px) {
+  .pincode__number {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+.pincode__number.is-filled:before,
+.pincode__number:before {
+  background-color: #8c8c8c;
+}
+
+.pincode__number:before {
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  content: "";
+  border-radius: 8px;
+}
+
+.pincode__number.is-current:after {
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 1px;
+  height: 22px;
+  content: "";
+  animation-name: blink;
+  animation-duration: 1.05s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  background-color: var(--text_primary,var(--vkui--color_text_primary));
+}
+
+.pincode__number.is-current:before {
+  background-color: var(--accent);
+}
+
+.pincode__numbers.is-error .pincode__number::before {
+  background-color: red !important;
+}
+
+.pincode__numbers.is-loading .pincode__number {
+  color: gray;
+}
+
+.pincode__numbers.is-loading .pincode__number::before {
+  background-color: #8c8c8c;
+}
+
+.errorMessages {
+  margin-top: 4px;
+  color: red;
+  font-size: 12px;
+  line-height: 1.16667;
+  text-align: center;
+}
+

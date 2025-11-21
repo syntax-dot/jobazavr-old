@@ -1,0 +1,15 @@
+FROM node:18-alpine
+
+ENV HOME /usr/src/app
+WORKDIR $HOME
+
+COPY package*.json ./
+RUN npm i --force --silent
+
+COPY . .
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

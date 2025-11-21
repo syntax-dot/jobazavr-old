@@ -1,0 +1,539 @@
+@import "@vkontakte/vkui/dist/vkui.css", "variables.scss";
+
+body,
+.Header {
+  user-select: none;
+}
+
+.desktopLogo .vkuiPanelHeader__fixed .vkuiFixedLayout__in .vkuiPanelHeader__in {
+  background-image: url(../images/main_logo.png);
+  background-size: 140px;
+  background-repeat: no-repeat;
+  background-position: 35% 8px;
+}
+
+.vkuiTabbarItem {
+  .vkuiTappable {
+    display: none;
+  }
+}
+
+.vkuiPanelHeader__content-in,
+.vkuiModalPageHeader__content-in {
+  font-weight: 400 !important;
+}
+
+.SimpleCell {
+  border-radius: 8px;
+}
+
+.navigation__item-selected {
+  background-color: var(--vkui--color_background--hover);
+}
+
+.panelPadding {
+  margin: 5px 10px;
+}
+
+.customPlaceholder .vkuiPlaceholder__in {
+  padding: 24px 32px;
+}
+.adminPlaceholder .vkuiPlaceholder__in {
+  padding: 12px 32px;
+  width: 100%;
+}
+
+.anketa .vkuiHeader__content-in {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.vkuiPanelHeader__content {
+  overflow: visible !important;
+}
+
+.vkuiMiniInfoCell {
+  padding: 6px 0;
+}
+
+.workModal {
+  &.vkuiModalPage--desktop {
+    .vkuiModalPage__in-wrap
+      .vkuiModalPage__in
+      .vkuiModalPage__header
+      .vkuiModalPageHeader
+      .vkuiModalPageHeader__in
+      .vkuiPanelHeader__in
+      .vkuiPanelHeader__content {
+      padding-left: 0;
+    }
+  }
+}
+
+#Groupmap,
+#Grouphome,
+#Groupprofile,
+#Grouplist {
+  .vkuiGroup__inner {
+    padding: 0;
+    overflow: hidden !important;
+  }
+}
+
+.vkuiRichCell__before {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  color: black !important;
+}
+
+.blackBtn {
+  background-color: black !important;
+}
+
+.greenBtn {
+  background-color: #4e7981 !important;
+}
+
+.addressText {
+  color: #4f4e4e;
+}
+
+.link {
+  color: var(--vkui--color_text_accent);
+  &:hover {
+    color: var(--vkui--color_background_accent--hover);
+  }
+}
+
+.muted-link {
+  color: var(--accent);
+  text-decoration: none;
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.vkuiGroup--card
+  > .vkuiGroup__inner
+  > .vkuiHeader:not(.vkuiHeader--mode-tertiary):first-child {
+  margin-top: -12px;
+}
+
+.fileInput .vkuiButton__in .vkuiButton__content {
+  padding: 0;
+  display: block;
+}
+
+.fileInput .vkuiButton__in {
+  display: block;
+}
+
+.fileInput {
+  display: block;
+}
+
+@media screen and (max-width: 999px) {
+  .go4109123758 {
+    top: calc(var(--safe-area-inset-top) + 40px) !important;
+  }
+
+  .telegramBody .go4109123758 {
+    top: 0px !important;
+  }
+}
+.telegramBody .vkuiCard--md-outline,
+.vkuiCard--md-shadow {
+  border: 1.5px solid #f5f5f5;
+}
+
+.telegramBody .markbtn {
+  background-color: #f5f5f5;
+}
+.telegramBody .markbtn:hover {
+  background-color: #efeeee;
+}
+.telegramBody .markbtn.Tappable--active {
+  background-color: #eae8e8;
+}
+
+.telegramBody[scheme="space_gray"] {
+  .markbtn {
+    background-color: var(--tg-theme-bg-color) !important;
+    filter: brightness(1.4);
+  }
+  .markbtn:hover {
+    background-color: var(--tg-theme-bg-color) !important;
+    filter: brightness(1.8);
+  }
+  .markbtn.Tappable--active {
+    background-color: var(--tg-theme-bg-color) !important;
+    filter: brightness(1.8);
+  }
+  .vkuiCard--md-outline,
+  .vkuiCard--md-shadow {
+    border: 1.5px solid #2d2d2d !important;
+  }
+  .toast {
+    background-color: var(--tg-theme-bg-color) !important;
+  }
+}
+
+body[scheme="bright_dark"],
+[scheme="bright_dark"],
+.vkuibright_dark,
+body[scheme="vkcom_dark"],
+[scheme="vkcom_dark"],
+body[scheme="space_gray"],
+[scheme="space_gray"],
+.telegramBody[scheme="space_gray"],
+.vkuivkcom_dark,
+.dark {
+  .desktopLogo
+    .vkuiPanelHeader__fixed
+    .vkuiFixedLayout__in
+    .vkuiPanelHeader__in {
+    background-image: url(../images/logo_dark.png) !important;
+  }
+  .toast {
+    background: #232324;
+    color: #fff;
+  }
+
+  .icon {
+    color: white !important;
+  }
+
+  .blackBtn {
+    background-color: var(--button_primary_background) !important;
+    color: var(
+      --button_primary_foreground,
+      var(--vkui--color_text_contrast)
+    ) !important;
+  }
+
+  .addressText {
+    color: #a9a9a9;
+  }
+
+  .vkBtn {
+    background-color: var(
+      --modal_card_background,
+      var(--vkui--color_background_modal)
+    ) !important;
+    color: var(--text_primary, var(--vkui--color_text_primary)) !important;
+  }
+}
+
+// .new {
+//   df
+// }
+
+.telegramBody .vkuiPanelHeader__in,
+.telegramBody .vkuiTabbar {
+  background: var(--tg-theme-bg-color);
+}
+
+.telegramBody .vkuiPanel .vkuiPanel__in,
+.telegramBody .vkuiPanel::after {
+  background-color: var(--tg-theme-bg-color);
+}
+
+.vkuiButton--lvl-primary.vkuiButton--clr-accent {
+  background-color: var(
+    --tg-theme-button-color,
+    var(--button_primary_background, var(--vkui--color_background_accent))
+  );
+}
+.telegramBody .vkuiButton--lvl-primary.vkuiButton--clr-accent {
+  color: var(--tg-theme-button-text-color);
+}
+
+.telegramBody .vkuiEpic #register .vkuiPanel__in {
+  padding-bottom: 0 !important;
+}
+
+.telegramBody {
+  -webkit-touch-callout: none !important; /* iOS Safari */
+  -webkit-user-select: none !important; /* Safari, Chrome, Opera, Samsung */
+  -khtml-user-select: none !important; /* Konqueror HTML */
+  -moz-user-select: none !important; /* Firefox */
+  -ms-user-select: none !important; /* Edge, IE */
+  user-select: none !important; /* Modern browsers */
+}
+
+.telegramBody .vkuiFormField--default .vkuiFormField__border {
+  background-color: var(--tg-theme-bg-color);
+}
+
+.telegramBody .muted-link,
+.telegramBody .tgLink {
+  color: var(--tg-theme-link-color);
+}
+
+.telegramBody .vkuiPanel .vkuiPanel__in::after {
+  background: var(--tg-theme-bg-color) !important;
+}
+
+.telegramBody {
+  background: var(--tg-theme-bg-color) !important;
+}
+
+.telegramBody .vkuiHeader__content-in {
+  -webkit-touch-callout: none !important; /* iOS Safari */
+  -webkit-user-select: none !important; /* Safari, Chrome, Opera, Samsung */
+  -khtml-user-select: none !important; /* Konqueror HTML */
+  -moz-user-select: none !important; /* Firefox */
+  -ms-user-select: none !important; /* Edge, IE */
+  user-select: none !important; /* Modern browsers */
+}
+
+.telegramBody .vkuiFooter {
+  color: var(--tg-theme-hint-color);
+}
+
+.telegramBody .vkuiModalCardBase__container,
+.telegramBody .vkuiCustomSelectOption,
+.telegramBody .vkuiCustomSelectDropdown {
+  background: var(--tg-theme-bg-color);
+}
+
+.telegramBody .vkuiCustomSelectOption:hover {
+  background: var(--tg-theme-bg-color);
+  filter: brightness(1.2);
+}
+
+.telegramBody .vkuiSimpleCell {
+  background-color: var(--tg-theme-bg-color);
+  filter: brightness(1.4);
+}
+.telegramBody .vkuiSimpleCell.Tappable--active {
+  background-color: var(--tg-theme-bg-color);
+  filter: brightness(1.6);
+}
+
+.telegramBody .simbtn {
+  background: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+}
+
+.telegramBody .vkuiTitle--l-2.Title--l-2 {
+  color: var(--tg-theme-text-color);
+}
+
+.telegramBody .addressText {
+  color: var(--tg-theme-hint-color);
+}
+
+.telegramBody .vkuiRichCell {
+}
+.telegramBody .vkuiRichCell.Tappable--active {
+}
+
+.telegramBody .formPlaceholder {
+  background-color: var(--tg-theme-bg-color) !important;
+  filter: brightness(1.4);
+}
+
+.telegramBody .vkuiCard__in {
+  background-color: var(--tg-theme-bg-color);
+}
+
+.telegramBody #map.DivFix .vkuiPanel__in {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.telegramBody .vkuiEpic #map.DivFix .vkuiPanel__in {
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 999px) {
+  .ymaps-2-1-79-map {
+    height: 100% !important;
+    width: 100%;
+  }
+}
+
+.telegramBody .vkuiTabbarItem:hover {
+  cursor: pointer;
+}
+
+#map.undefined.vkuiPanel {
+  overflow: hidden !important;
+}
+
+#map.DivFix.vkuiPanel {
+  overflow: hidden !important;
+}
+
+.listPlaceholder .vkuiPlaceholder__in {
+  padding: 24px 32px 12px 32px;
+}
+
+.vkBtn {
+  z-index: 10000;
+  width: fit-content;
+  float: right;
+  margin-right: 10px;
+  margin-top: 16px;
+}
+
+.geoBtn {
+  z-index: 10000;
+  min-width: 0px;
+  width: fit-content;
+  float: right;
+  margin-bottom: 7px;
+  margin-right: -7px;
+}
+.geoBtn .vkuiIconButton {
+  border-radius: 8px;
+  width: fit-content;
+}
+
+@media (min-width: 1000px) {
+  .geoBtn {
+    margin-bottom: 0px;
+    margin-right: 3px;
+    margin-top: 23px;
+  }
+
+  .vkBtn {
+    margin-bottom: 0px;
+    margin-top: 23px;
+  }
+}
+
+// @media (max-width: 999px) {
+//   .geoBtn {
+//     bottom: calc(var(--safe-area-inset-bottom) + 10px) !important;
+//   }
+//   .vkui--vkIOS--dark .geoBtn {
+//     bottom: calc(var(--safe-area-inset-bottom) + 10px) !important;
+//   }
+// }
+
+// .bgHoverRemove {
+//   background-color: white !important;
+// }
+
+.borderCard {
+  border: var(--thin-border) solid
+    var(--input_border, var(--vkui--color_image_border_alpha)) !important;
+  background-color: white;
+}
+.borderCard::before {
+  border: none;
+}
+
+// .vkuiTappable--hover-background {
+//   background-color: white !important;
+//   background: white !important;
+// }
+
+.cardCell {
+  border-radius: 0px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background: var(--background_content);
+}
+
+.vkuiCardGrid--m .vkuiCard {
+  width: calc(50% - (10px / 2));
+}
+
+.vkuiCardGrid .vkuiCard:nth-child(odd) {
+  margin-right: 5px;
+}
+.vkuiCardGrid .vkuiCard:nth-child(even) {
+  margin-right: 0;
+}
+
+.vkuiPanelHeader--ios.vkuiPanelHeader--no-after .vkuiPanelHeader__content {
+  padding-right: 17px;
+}
+
+.vkuiPanelHeader--ios .vkuiPanelHeader__content > * {
+  padding: 0;
+}
+
+.vkuiPanelHeader--android .vkuiPanelHeader__content > * {
+  padding: 0;
+}
+
+.dropdownMenu {
+  position: fixed;
+  bottom: calc(var(--safe-area-inset-bottom) + var(--tabbar_height));
+  right: 6%;
+  z-index: 1000;
+
+  .dropdownMenu-vk {
+    position: relative;
+
+    svg {
+      position: relative;
+      z-index: 1500;
+    }
+  }
+
+  .dropdownMenu-tg {
+    position: relative;
+
+    svg {
+      position: relative;
+      z-index: 1500;
+    }
+  }
+
+  .dropdownMenu-vk::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: none;
+    box-shadow: 1px 1px 35px 5.5px #000;
+    z-index: 1001;
+    //opacity: 0.4;
+  }
+
+  .dropdownMenu-tg::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: none;
+    box-shadow: 1px 1px 35px 5.5px #000;
+    z-index: 1001;
+    //opacity: 0.4;
+  }
+}
+
+#tutorial .vkuiGroup__inner {
+  padding-top: 0;
+}
+
+.clearPlaceholder .vkuiPlaceholder__in {
+  padding: 0;
+}
+
+.vkuiSelect .vkuiFormField__after {
+  pointer-events: auto;
+}
+
+.removeBgOnClick {
+  background: var(
+    --modal_card_background,
+    var(--vkui--color_background_modal)
+  ) !important;
+  border: 1px solid var(--vkui--color_background_modal--active);
+  border-bottom: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}

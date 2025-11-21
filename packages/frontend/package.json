@@ -1,0 +1,52 @@
+{
+  "name": "vk-frontend",
+  "private": true,
+  "version": "1.1.0",
+  "homepage": "./",
+  "scripts": {
+    "dev": "vite --port=3000 --host=127.0.0.1",
+    "build": "npm run prettier && vite build --base=./",
+    "start": "vite preview --port=3000",
+    "odr": "env ODR=1 npm run build",
+    "prettier": "npx prettier --write .",
+    "tunnel": "vk-tunnel --insecure=1 --http-protocol=http --ws-protocol=wss --host=localhost --port=3000",
+    "deploy": "npm run build && kokateam-deploy",
+    "vk-hosting": "vk-miniapps-deploy"
+  },
+  "dependencies": {
+    "@analytics/google-tag-manager": "^0.5.3",
+    "@pbe/react-yandex-maps": "^1.2.2",
+    "@reyzitwo/react-router-vkminiapps": "^1.4.8",
+    "@tolgee/react": "^5.11.4",
+    "@vkontakte/icons": "^1.213.0",
+    "@vkontakte/vk-bridge": "^2.7.2",
+    "@vkontakte/vkui": "4.41.0",
+    "analytics": "^0.8.1",
+    "cyrillic-to-translit-js": "^3.2.1",
+    "framer-motion": "6",
+    "geocoder": "^0.2.3",
+    "kokateam-infscroll": "^1.0.2",
+    "miku-web-app": "^6.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-toast": "^2.4.0",
+    "react-string-replace": "^1.1.0",
+    "recoil": "^0.7.6",
+    "sex-by-russian-name": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.47",
+    "@types/react-dom": "^17.0.17",
+    "@vitejs/plugin-react-swc": "^3.0.1",
+    "@vkontakte/vk-miniapps-deploy": "^0.0.26",
+    "eruda": "^2.7.4",
+    "eruda-code": "^2.1.0",
+    "eruda-dom": "^2.0.0",
+    "kokateam-deploy": "^1.0.23",
+    "prettier": "^2.8.1",
+    "sass": "^1.56.2",
+    "vite": "^4.0.0",
+    "vite-plugin-singlefile": "^0.13.1",
+    "vite-svg-loader": "^3.6.0"
+  }
+}
