@@ -1,12 +1,11 @@
 # Stage 1: build
-FROM node:20-alpine AS builder
+FROM node:20-bullseye AS builder
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 COPY .npmrc ./
-RUN npm cache clean --force
-RUN npm install --legacy-peer-deps --silent
+RUN npm ci --legacy-peer-deps --silent
 RUN npm rebuild @swc/core
 
 COPY . .
