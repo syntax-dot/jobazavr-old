@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --port=3000 --host=127.0.0.1",
     "build": "npm run prettier && vite build --base=./",
-    "start": "vite preview --port=3000",
+    "start": "vite preview --port=3000 --host",
     "odr": "env ODR=1 npm run build",
     "prettier": "npx prettier --write .",
     "tunnel": "vk-tunnel --insecure=1 --http-protocol=http --ws-protocol=wss --host=localhost --port=3000",
