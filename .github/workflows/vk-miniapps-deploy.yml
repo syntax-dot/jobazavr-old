@@ -1,0 +1,25 @@
+name: Deploy VK Mini App
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: ./packages/frontend
+        run: npm ci
+
+      - name: Deploy VK Mini App via vk-miniapps-deploy
+        working-directory: ./packages/frontend
+        run: npx vk-miniapps-deploy --token ${{ secrets.VK_API_TOKEN }} --app_id 51567999
