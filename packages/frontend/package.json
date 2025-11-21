@@ -10,8 +10,7 @@
     "odr": "env ODR=1 npm run build",
     "prettier": "npx prettier --write .",
     "tunnel": "vk-tunnel --insecure=1 --http-protocol=http --ws-protocol=wss --host=localhost --port=3000",
-    "deploy": "npm run build && kokateam-deploy",
-    "vk-hosting": "vk-miniapps-deploy"
+    "deploy": "npm run build && vk-miniapps-deploy --token $VK_API_TOKEN --app_id 51567999"
   },
   "dependencies": {
     "@analytics/google-tag-manager": "^0.5.3",
@@ -42,7 +41,6 @@
     "eruda": "^2.7.4",
     "eruda-code": "^2.1.0",
     "eruda-dom": "^2.0.0",
-    "kokateam-deploy": "^1.0.23",
     "prettier": "^2.8.1",
     "sass": "^1.56.2",
     "vite": "^4.0.0",
