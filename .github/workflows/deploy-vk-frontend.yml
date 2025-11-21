@@ -16,7 +16,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t vk-frontend:latest -f ./packages/frontend/Dockerfile .
+          docker build -t vk-frontend:latest -f ./packages/frontend/Dockerfile ./packages/frontend
 
       - name: Save Docker image as tar
         run: docker save vk-frontend:latest -o vk-frontend.tar
