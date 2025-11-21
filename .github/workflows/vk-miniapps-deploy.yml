@@ -25,5 +25,5 @@ jobs:
         env:
           VK_API_TOKEN: ${{ secrets.VK_API_TOKEN }}
           CI: true
-        run: npx vk-miniapps-deploy --token $VK_API_TOKEN --app_id 51567999
+        run: npx vk-miniapps-deploy --token ${{ secrets.VK_API_TOKEN }} --app_id 51567999 -y
 
