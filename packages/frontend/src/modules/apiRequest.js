@@ -1,4 +1,6 @@
 const api = async (endpoint, method, params, isUpload) => {
+  if (!endpoint) return;
+
   const headers = {
     authorization: `Bearer ${
       !window.location.href.includes("tgWebApp")
@@ -11,7 +13,10 @@ const api = async (endpoint, method, params, isUpload) => {
 
   if (!isUpload) headers["Content-Type"] = "application/json";
 
-  const data = await fetch(`${import.meta.env.VITE_BACKEND_URL}/${endpoint}`, {
+  const baseUrl =
+    import.meta.env.VITE_BACKEND_URL ?? "https://vk-mini-app.jobazavr.ru";
+
+  const data = await fetch(`${baseUrl}/${endpoint}`, {
     method: method,
     headers: headers,
     body: !isUpload ? JSON.stringify(params) : params,
